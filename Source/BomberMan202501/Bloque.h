@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "Bloque.generated.h"
 
+class UStaticMeshComponent;
+class UParticleSystemComponent;
 UCLASS()
 class BOMBERMAN202501_API ABloque : public AActor
 {
@@ -22,5 +24,17 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	//malla del bloque
+	UPROPERTY()
+	UStaticMeshComponent* MeshBloque;
+	UPROPERTY()
+	UParticleSystemComponent* Particulas;
+
+
+public:
+	bool bDestruible = true;
+
+	virtual void AjustarTamano(FVector NuevoTamano);
 
 };

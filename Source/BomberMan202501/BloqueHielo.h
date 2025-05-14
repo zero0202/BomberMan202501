@@ -13,5 +13,13 @@ UCLASS()
 class BOMBERMAN202501_API ABloqueHielo : public ABloque
 {
 	GENERATED_BODY()
-	
+public:
+	ABloqueHielo();
+protected:
+	virtual void BeginPlay() override;
+public:
+	virtual void Tick(float DeltaTime) override;
+
+	FVector PosicionInicial;
+	float TiempoMovimiento;
 };

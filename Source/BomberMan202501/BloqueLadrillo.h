@@ -13,5 +13,22 @@ UCLASS()
 class BOMBERMAN202501_API ABloqueLadrillo : public ABloque
 {
 	GENERATED_BODY()
-	
+public:
+	ABloqueLadrillo();
+
+protected:
+
+	virtual void BeginPlay() override;
+	UParticleSystemComponent* ParticleSystem;
+
+public:
+	virtual void Tick(float DeltaTime) override;
+
+public:
+
+	bool PuedeSubir;
+	float velocidad;
+	float amplitud;
+	float PosicionInicial;
+
 };

@@ -13,5 +13,22 @@ UCLASS()
 class BOMBERMAN202501_API ABloqueMadera : public ABloque
 {
 	GENERATED_BODY()
-	
+public:
+	ABloqueMadera();
+
+protected:
+	virtual void BeginPlay() override;
+	UParticleSystemComponent* ParticleSystem;
+
+public:
+	virtual void Tick(float DeltaTime) override;
+
+public:
+
+	bool MoverBloque;
+	bool bAbriendo;
+	float VelocidadMovimiento;
+	float DistanciaApertura; // Distancia máxima al abrir
+	FVector PosicionInicial; // Posición inicial
+
 };

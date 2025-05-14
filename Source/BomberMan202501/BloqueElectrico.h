@@ -13,5 +13,20 @@ UCLASS()
 class BOMBERMAN202501_API ABloqueElectrico : public ABloque
 {
 	GENERATED_BODY()
-	
+public:
+	ABloqueElectrico();
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	virtual void Tick(float DeltaTime) override;
+public:
+
+	UParticleSystemComponent* ParticulasElectricas;
+
+	bool bAbriendoM;
+	float VelocidadMovimiento;
+	float DistanciaApertura; // Distancia máxima al abrir
+	FVector PosicionInicial; // Posición inicial
+
 };

@@ -13,5 +13,17 @@ UCLASS()
 class BOMBERMAN202501_API ABloqueAcero : public ABloque
 {
 	GENERATED_BODY()
-	
+public:
+	ABloqueAcero();
+
+protected:
+
+	virtual void BeginPlay() override;
+
+
+public:
+	virtual void Tick(float DeltaTime) override;
+
+public:
+	//float velocidad;
 };
