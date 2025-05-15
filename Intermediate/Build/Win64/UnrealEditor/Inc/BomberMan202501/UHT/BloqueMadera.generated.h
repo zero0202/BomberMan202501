@@ -24,8 +24,6 @@ public: \
 
 
 #define FID_BomberMan202501_Source_BomberMan202501_BloqueMadera_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABloqueMadera(); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABloqueMadera(ABloqueMadera&&); \

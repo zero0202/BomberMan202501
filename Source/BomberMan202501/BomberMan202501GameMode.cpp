@@ -4,8 +4,6 @@
 #include "BomberMan202501Character.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Bloque.h"
-#include "FabricaBloques.h"
-#include "FabricaBloquesNormales.h"
 #include "BloqueAcero.h"
 #include "BloqueLadrillo.h"
 

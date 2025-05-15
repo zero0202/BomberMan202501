@@ -24,8 +24,6 @@ public: \
 
 
 #define FID_BomberMan202501_Source_BomberMan202501_BloqueAcero_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABloqueAcero(); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABloqueAcero(ABloqueAcero&&); \

@@ -14,18 +14,17 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN202501_FabricaBloquesNormales_generated_h
 
-#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFabricaBloquesNormales(); \
 	friend struct Z_Construct_UClass_AFabricaBloquesNormales_Statics; \
 public: \
-	DECLARE_CLASS(AFabricaBloquesNormales, AFabricaBloques, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/BomberMan202501"), NO_API) \
-	DECLARE_SERIALIZER(AFabricaBloquesNormales)
+	DECLARE_CLASS(AFabricaBloquesNormales, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/BomberMan202501"), NO_API) \
+	DECLARE_SERIALIZER(AFabricaBloquesNormales) \
+	virtual UObject* _getUObject() const override { return const_cast<AFabricaBloquesNormales*>(this); }
 
 
-#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AFabricaBloquesNormales(); \
+#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AFabricaBloquesNormales(AFabricaBloquesNormales&&); \
@@ -37,12 +36,12 @@ public: \
 	NO_API virtual ~AFabricaBloquesNormales();
 
 
-#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_12_PROLOG
-#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_15_GENERATED_BODY \
+#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_9_PROLOG
+#define FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_15_INCLASS_NO_PURE_DECLS \
-	FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_15_ENHANCED_CONSTRUCTORS \
+	FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_12_INCLASS_NO_PURE_DECLS \
+	FID_BomberMan202501_Source_BomberMan202501_FabricaBloquesNormales_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

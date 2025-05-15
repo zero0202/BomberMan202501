@@ -11,6 +11,8 @@
     <None Include="..\..\Source\BomberMan202501Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -120,12 +122,6 @@
     <ClInclude Include="..\..\Source\BomberMan202501\BomberMan202501GameMode.h">
       <Filter>Source\BomberMan202501</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\BomberMan202501\FabricaBloques.cpp">
-      <Filter>Source\BomberMan202501</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BomberMan202501\FabricaBloques.h">
-      <Filter>Source\BomberMan202501</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\BomberMan202501\FabricaBloquesMagicos.cpp">
       <Filter>Source\BomberMan202501</Filter>
     </ClCompile>
@@ -136,6 +132,12 @@
       <Filter>Source\BomberMan202501</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BomberMan202501\FabricaBloquesNormales.h">
+      <Filter>Source\BomberMan202501</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BomberMan202501\IFabricaBloques.cpp">
+      <Filter>Source\BomberMan202501</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BomberMan202501\IFabricaBloques.h">
       <Filter>Source\BomberMan202501</Filter>
     </ClInclude>
   </ItemGroup>

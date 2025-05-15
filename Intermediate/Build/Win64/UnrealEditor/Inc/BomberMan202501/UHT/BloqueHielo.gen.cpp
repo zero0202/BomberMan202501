@@ -74,7 +74,6 @@ template<> BOMBERMAN202501_API UClass* StaticClass<ABloqueHielo>()
 {
 	return ABloqueHielo::StaticClass();
 }
-ABloqueHielo::ABloqueHielo() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(ABloqueHielo);
 ABloqueHielo::~ABloqueHielo() {}
 // End Class ABloqueHielo
@@ -83,10 +82,10 @@ ABloqueHielo::~ABloqueHielo() {}
 struct Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueHielo_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABloqueHielo, ABloqueHielo::StaticClass, TEXT("ABloqueHielo"), &Z_Registration_Info_UClass_ABloqueHielo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloqueHielo), 3285001832U) },
+		{ Z_Construct_UClass_ABloqueHielo, ABloqueHielo::StaticClass, TEXT("ABloqueHielo"), &Z_Registration_Info_UClass_ABloqueHielo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloqueHielo), 3610792359U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueHielo_h_2145255889(TEXT("/Script/BomberMan202501"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueHielo_h_2104453029(TEXT("/Script/BomberMan202501"),
 	Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueHielo_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueHielo_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

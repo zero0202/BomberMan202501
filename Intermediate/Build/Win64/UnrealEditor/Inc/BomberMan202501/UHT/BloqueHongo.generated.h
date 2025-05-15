@@ -9,10 +9,17 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef BOMBERMAN202501_BloqueHongo_generated_h
 #error "BloqueHongo.generated.h already included, missing '#pragma once' in BloqueHongo.h"
 #endif
 #define BOMBERMAN202501_BloqueHongo_generated_h
+
+#define FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnOverlapBegin);
+
 
 #define FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_INCLASS_NO_PURE_DECLS \
 private: \
@@ -24,8 +31,6 @@ public: \
 
 
 #define FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABloqueHongo(); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABloqueHongo(ABloqueHongo&&); \
@@ -41,6 +46,7 @@ public: \
 #define FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_INCLASS_NO_PURE_DECLS \
 	FID_BomberMan202501_Source_BomberMan202501_BloqueHongo_h_15_ENHANCED_CONSTRUCTORS \
 private: \

@@ -19,7 +19,7 @@ ABloqueLava::ABloqueLava()
 		MeshBloque->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
 	//para asignar textura
-	static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObjetoBloqueAceroMaterial(TEXT("/Script/Engine.Material'/Game/StarterContent/Materials/Fuego.Fuego'"));
+	static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObjetoBloqueAceroMaterial(TEXT("/Script/Engine.Material'/Game/StarterContent/Materials/Lava.Lava'"));
 	if (ObjetoBloqueAceroMaterial.Succeeded())
 	{
 		MeshBloque->SetMaterial(0, ObjetoBloqueAceroMaterial.Object);
