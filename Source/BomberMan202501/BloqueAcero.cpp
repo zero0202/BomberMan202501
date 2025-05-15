@@ -52,3 +52,4 @@ void ABloqueAcero::Tick(float DeltaTime)
 	SetActorLocation(NewLocation);
 	*/
 }
+

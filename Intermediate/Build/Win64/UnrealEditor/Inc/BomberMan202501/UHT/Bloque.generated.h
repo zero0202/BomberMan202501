@@ -19,7 +19,7 @@ private: \
 	static void StaticRegisterNativesABloque(); \
 	friend struct Z_Construct_UClass_ABloque_Statics; \
 public: \
-	DECLARE_CLASS(ABloque, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/BomberMan202501"), NO_API) \
+	DECLARE_CLASS(ABloque, AActor, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/BomberMan202501"), NO_API) \
 	DECLARE_SERIALIZER(ABloque)
 
 
@@ -31,7 +31,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ABloque); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABloque); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABloque) \
+	DEFINE_ABSTRACT_DEFAULT_CONSTRUCTOR_CALL(ABloque) \
 	NO_API virtual ~ABloque();
 
 

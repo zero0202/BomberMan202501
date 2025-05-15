@@ -82,7 +82,7 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ABloque_Statics::ClassP
 	0,
 	UE_ARRAY_COUNT(Z_Construct_UClass_ABloque_Statics::PropPointers),
 	0,
-	0x009000A4u,
+	0x009000A5u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABloque_Statics::Class_MetaDataParams), Z_Construct_UClass_ABloque_Statics::Class_MetaDataParams)
 };
 UClass* Z_Construct_UClass_ABloque()
@@ -105,10 +105,10 @@ ABloque::~ABloque() {}
 struct Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_Bloque_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABloque, ABloque::StaticClass, TEXT("ABloque"), &Z_Registration_Info_UClass_ABloque, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloque), 3775166155U) },
+		{ Z_Construct_UClass_ABloque, ABloque::StaticClass, TEXT("ABloque"), &Z_Registration_Info_UClass_ABloque, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloque), 1271151590U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_Bloque_h_1405712735(TEXT("/Script/BomberMan202501"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_Bloque_h_1562782781(TEXT("/Script/BomberMan202501"),
 	Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_Bloque_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_Bloque_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -82,10 +82,10 @@ ABloqueElectrico::~ABloqueElectrico() {}
 struct Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueElectrico_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABloqueElectrico, ABloqueElectrico::StaticClass, TEXT("ABloqueElectrico"), &Z_Registration_Info_UClass_ABloqueElectrico, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloqueElectrico), 3452302970U) },
+		{ Z_Construct_UClass_ABloqueElectrico, ABloqueElectrico::StaticClass, TEXT("ABloqueElectrico"), &Z_Registration_Info_UClass_ABloqueElectrico, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloqueElectrico), 2670794022U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueElectrico_h_578615989(TEXT("/Script/BomberMan202501"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueElectrico_h_2154534756(TEXT("/Script/BomberMan202501"),
 	Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueElectrico_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BloqueElectrico_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

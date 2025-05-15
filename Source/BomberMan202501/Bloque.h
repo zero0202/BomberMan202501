@@ -8,7 +8,7 @@
 
 class UStaticMeshComponent;
 class UParticleSystemComponent;
-UCLASS()
+UCLASS(Abstract)
 class BOMBERMAN202501_API ABloque : public AActor
 {
 	GENERATED_BODY()
@@ -36,5 +36,5 @@ public:
 	bool bDestruible = true;
 
 	virtual void AjustarTamano(FVector NuevoTamano);
-
+	//virtual void Generar() = 0;
 };

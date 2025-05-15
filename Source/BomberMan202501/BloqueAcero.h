@@ -25,5 +25,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
+
 	//float velocidad;
+	//void Generar() override; 
+
 };
