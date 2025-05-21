@@ -10,6 +10,7 @@
 #include "BloqueMadera.h"
 #include "Puerta.h"
 #include "Obtaculos.h"
+#include "ILaberintoBuilder.h"
 #include "Laberinto.generated.h"
 
 UCLASS()
@@ -25,40 +26,17 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	public:
-	// Clases para instanciar objetos
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<ABloqueAcero> BloqueA;
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<ABloqueMadera> BloqueM;
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<APuerta> Puertas;
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<AObtaculos> Obstaculos;
+	
 /*
 	TArray<ABloque*> BLoque;
 	TArray<APuerta*> Puertas;
 	TArray<AObtaculos*> Obstaculos;
 */
+	IILaberintoBuilder* Builder;
 
-	TArray<TArray<int32>> MapaLaberinto;
-	TArray<TArray<int32>> MapaPuertas;
-	TArray<TArray<int32>> MapaObstaculos; 
-
-	void InicializarMapas(
-		const TArray<TArray<int32>>& NuevoMapaLaberinto,
-		const TArray<TArray<int32>>& NuevoMapaPuertas,
-		const TArray<TArray<int32>>& NuevoMapaObstaculos);
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-private:
-	float Espaciado = 100.0f;
-	int columnas = 10;
-	int filas = 10;
+	virtual void Tick(float DeltaTime) override;	
 
 public:
 

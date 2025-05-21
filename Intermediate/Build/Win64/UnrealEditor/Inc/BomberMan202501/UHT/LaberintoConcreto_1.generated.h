@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN202501_LaberintoConcreto_1_generated_h
 
-#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesALaberintoConcreto_1(); \
 	friend struct Z_Construct_UClass_ALaberintoConcreto_1_Statics; \
@@ -24,7 +24,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ALaberintoConcreto_1*>(this); }
 
 
-#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ALaberintoConcreto_1(ALaberintoConcreto_1&&); \
@@ -36,12 +36,12 @@ public: \
 	NO_API virtual ~ALaberintoConcreto_1();
 
 
-#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_10_PROLOG
-#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_13_GENERATED_BODY \
+#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_15_PROLOG
+#define FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_13_INCLASS_NO_PURE_DECLS \
-	FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_13_ENHANCED_CONSTRUCTORS \
+	FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_18_INCLASS_NO_PURE_DECLS \
+	FID_BomberMan202501_Source_BomberMan202501_LaberintoConcreto_1_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

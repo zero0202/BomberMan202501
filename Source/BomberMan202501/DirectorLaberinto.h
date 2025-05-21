@@ -27,13 +27,14 @@ public:
 public:
 
 	IILaberintoBuilder* LaberintoBuilder;
-	//IILaberinto* Laberinto;
+	class Laberinto* Laberinto;
 public:
 
-	void SeleccionarLaberinto(IILaberintoBuilder* Builder);
+	void SeleccionarLaberinto(IILaberintoBuilder* NewBuilder);
 	//void SeleccionarLaberinto(IILaberinto* Builder);
 	void ConstruirLaberinto();
 	//void Modificar();
 	class ALaberinto* ObtenerLaberinto() const;
 	//void GetLaberinto();
+	//set buil interior mensajes
 };

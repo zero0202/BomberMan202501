@@ -34,6 +34,7 @@ void ABomberMan202501GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
+	//statc  
 	Director = GetWorld()->SpawnActor<ADirectorLaberinto>();
 	ALaberintoConcreto_1* Builder = GetWorld()->SpawnActor<ALaberintoConcreto_1>();
 
@@ -42,8 +43,9 @@ void ABomberMan202501GameMode::BeginPlay()
 		Director->SeleccionarLaberinto(Builder);
 		Director->ConstruirLaberinto();
 
-		Laberinto_1 = Director->ObtenerLaberinto();  // Guarda el resultado si lo necesitas
+		Laberinto_1 = Director->ObtenerLaberinto();  
 	}
+
 }
 
 void ABomberMan202501GameMode::Tick(float DeltaTime)

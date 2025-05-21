@@ -5,6 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ILaberintoBuilder.h"
+#include "Bloque.h"
+#include "BloqueAcero.h"
+#include "BloqueMadera.h"
+#include "Puerta.h"
+#include "Obtaculos.h"
 #include "LaberintoConcreto_1.generated.h"
 
 UCLASS()
@@ -23,16 +28,57 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 public:
+	// Clases para instanciar objetos
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<ABloqueAcero> BloqueA;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<ABloqueMadera> BloqueM;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<APuerta> Puertas;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AObtaculos> Obstaculos;
+
+	void InicializarMapas(
+		const TArray<TArray<int32>>& NuevoMapaLaberinto,
+		const TArray<TArray<int32>>& NuevoMapaPuertas,
+		const TArray<TArray<int32>>& NuevoMapaObstaculos);
+public:
+	float Espaciado = 100.0f;
+	int columnas = 10;
+	int filas = 10;
+
+
 	UPROPERTY()
 	ALaberinto* Laberinto;
 
-	TArray<TArray<int32>> MapaBloques;
-	TArray<TArray<int32>> MapaPuertas;
-	TArray<TArray<int32>> MapaObstaculos;
+	TArray<TArray<int32>> MapaLaberinto;
+	TArray<TArray<int32>> MapaBloques = {
+		{0, 0, 1, 0, 0},
+		{0, 1, 1, 1, 0},
+		{1, 1, 0, 1, 1},
+		{0, 1, 1, 1, 0},
+		{0, 0, 1, 0, 0}
+	};
+	TArray<TArray<int32>> MapaPuertas = {
+		{0, 0, 7, 0, 0},
+		{0, 0, 0, 0, 0},
+		{7, 0, 0, 0, 7},
+		{0, 0, 0, 0, 0},
+		{0, 0, 7, 0, 0}
+	};
+	TArray<TArray<int32>> MapaObstaculos{
+		{0, 8, 0, 8, 0},
+		{8, 0, 0, 0, 8},
+		{0, 0, 8, 0, 0},
+		{8, 0, 0, 0, 8},
+		{0, 8, 0, 8, 0}
+	};
 
-	void InicializarMapas();
+
 public:
 
 	virtual void Reset() override;
@@ -40,6 +86,6 @@ public:
 	virtual void BuildInterior() override;
 	virtual void BuildPuertas() override;
 	virtual void BuildObstaculos() override;
-	virtual class ALaberinto* ObtenerLaberinto() override;
+	virtual  ALaberinto* ObtenerLaberinto() override;
 
 };

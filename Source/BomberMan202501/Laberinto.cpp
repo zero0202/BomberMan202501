@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Laberinto.h"
-
+#include "Engine/Engine.h"
 // Sets default values
 ALaberinto::ALaberinto()
 {
@@ -23,72 +23,48 @@ void ALaberinto::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-void ALaberinto::InicializarMapas(
-	const TArray<TArray<int32>>& NuevoMapaLaberinto,
-	const TArray<TArray<int32>>& NuevoMapaPuertas,
-	const TArray<TArray<int32>>& NuevoMapaObstaculos)
-{
-	MapaLaberinto = NuevoMapaLaberinto;
-	MapaPuertas = NuevoMapaPuertas;
-	MapaObstaculos = NuevoMapaObstaculos;
-}
+
 void ALaberinto::SetBordes()
 {
-	for (int x = 0; x < columnas; ++x)
-	{
-		for (int y = 0; y < filas; ++y)
-		{
-			if (x == 0 || x == columnas - 1 || y == 0 || y == filas - 1)
-			{
-				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<ABloqueAcero>(BloqueA, Pos, FRotator::ZeroRotator);
-			}
-		}
-	}
+
+
+	Builder->BuildBordes();
+
 }
 
 void ALaberinto::SetInterior()
 {
-	for (int y = 0; y < MapaLaberinto.Num(); ++y)
+	if (Builder)
 	{
-		for (int x = 0; x < MapaLaberinto[y].Num(); ++x)
-		{
-			if (MapaLaberinto[y][x] == 1)
-			{
-				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<ABloqueMadera>(BloqueM, Pos, FRotator::ZeroRotator);
-			}
-		}
+		Builder->BuildInterior();
+	}
+	else if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir torretas."));
 	}
 }
 
 void ALaberinto::SetPuertas()
 {
-	for (int y = 0; y < MapaPuertas.Num(); ++y)
+	if (Builder)
 	{
-		for (int x = 0; x < MapaPuertas[y].Num(); ++x)
-		{
-			if (MapaPuertas[y][x] == 7)
-			{
-				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<APuerta>(Puertas, Pos, FRotator::ZeroRotator);
-			}
-		}
+		Builder->BuildPuertas();
+	}
+	else if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir torretas."));
 	}
 }
 
 void ALaberinto::SetObstaculos()
 {
-	for (int y = 0; y < MapaObstaculos.Num(); ++y)
+	if (Builder)
 	{
-		for (int x = 0; x < MapaObstaculos[y].Num(); ++x)
-		{
-			if (MapaObstaculos[y][x] == 8)
-			{
-				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<AObtaculos>(Obstaculos, Pos, FRotator::ZeroRotator);
-			}
-		}
+		Builder->BuildObstaculos();
+	}
+	else if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir minas."));
 	}
 }
 
