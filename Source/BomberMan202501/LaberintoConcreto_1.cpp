@@ -27,8 +27,6 @@ void ALaberintoConcreto_1::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	Laberinto = GetWorld()->SpawnActor<ALaberinto>(ALaberinto::StaticClass());
-	
 }
 
 // Called every frame
@@ -38,24 +36,63 @@ void ALaberintoConcreto_1::Tick(float DeltaTime)
 
 }
 
+void ALaberintoConcreto_1::InicializarMapas()
+{
+	MapaBloques = {
+		{0, 0, 1, 0, 0},
+		{0, 1, 1, 1, 0},
+		{1, 1, 0, 1, 1},
+		{0, 1, 1, 1, 0},
+		{0, 0, 1, 0, 0}
+	};
+
+	MapaPuertas = {
+		{0, 0, 7, 0, 0},
+		{0, 0, 0, 0, 0},
+		{7, 0, 0, 0, 7},
+		{0, 0, 0, 0, 0},
+		{0, 0, 7, 0, 0}
+	};
+
+	MapaObstaculos = {
+		{0, 8, 0, 8, 0},
+		{8, 0, 0, 0, 8},
+		{0, 0, 8, 0, 0},
+		{8, 0, 0, 0, 8},
+		{0, 8, 0, 8, 0}
+	};
+}
+
+void ALaberintoConcreto_1::Reset()
+{
+	if (Laberinto)
+	{
+		Laberinto->Destroy();
+		Laberinto = nullptr;
+	}
+
+	Laberinto = GetWorld()->SpawnActor<ALaberinto>(ALaberinto::StaticClass());
+	Laberinto->InicializarMapas(MapaBloques, MapaPuertas, MapaObstaculos);
+}
+
 void ALaberintoConcreto_1::BuildBordes()
 {
-	Laberinto->SetBordes(1,2);
+	Laberinto->SetBordes();
 }
 
 void ALaberintoConcreto_1::BuildInterior()
 {
-	Laberinto->SetInterior(1);
+	Laberinto->SetInterior();
 }
 
 void ALaberintoConcreto_1::BuildPuertas()
 {
-	Laberinto->SetPuertas(1);  
+	Laberinto->SetPuertas();  
 }
 
 void ALaberintoConcreto_1::BuildObstaculos()
 {
-	Laberinto->SetObstaculos(1);
+	Laberinto->SetObstaculos();
 }
 
 ALaberinto* ALaberintoConcreto_1::ObtenerLaberinto()

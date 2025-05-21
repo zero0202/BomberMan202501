@@ -21,12 +21,8 @@ class BOMBERMAN202501_API IILaberintoBuilder
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	/*
-	crearborde
-	crearmuros
-	crearpasillos
-	crear
-	*/
+	
+	virtual void Reset() = 0;
 	virtual void BuildBordes() = 0;
 	virtual void BuildInterior() = 0;
 	virtual void BuildPuertas() = 0;

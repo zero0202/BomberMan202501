@@ -34,37 +34,23 @@ void ABomberMan202501GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-    
-  
+	Director = GetWorld()->SpawnActor<ADirectorLaberinto>();
+	ALaberintoConcreto_1* Builder = GetWorld()->SpawnActor<ALaberintoConcreto_1>();
+
+	if (Director && Builder)
+	{
+		Director->SeleccionarLaberinto(Builder);
+		Director->ConstruirLaberinto();
+
+		Laberinto_1 = Director->ObtenerLaberinto();  // Guarda el resultado si lo necesitas
+	}
 }
 
 void ABomberMan202501GameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-    ADirectorLaberinto* Director = GetWorld()->SpawnActor<ADirectorLaberinto>(ADirectorLaberinto::StaticClass());
-    if (!Director)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Failed to spawn DirectorLaberinto"));
-        return;
-    }
-    ALaberintoConcreto_1* ConcreteBuilder = GetWorld()->SpawnActor<ALaberintoConcreto_1>(ALaberintoConcreto_1::StaticClass());
-    if (!ConcreteBuilder)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Failed to spawn LaberintoConcreto_1"));
-        return;
-    }
-    Director->SeleccionarLaberinto(ConcreteBuilder);
-    Director->ConstruirLaberinto();
-    Laberinto_1 = Director->ObtenerLaberinto();
-    if (!Laberinto_1)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("No maze constructed"));
-    }
-    else
-    {
-        UE_LOG(LogTemp, Log, TEXT("Maze constructed successfully"));
-    }
+   
 }
 
 

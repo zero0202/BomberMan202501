@@ -27,9 +27,11 @@ public:
 
 public:
 	
-	UPROPERTY()
-	TScriptInterface<IIFabricaBloques> FabricaBloques;
+	//UPROPERTY()
+	//TScriptInterface<IIFabricaBloques> FabricaBloques;
 public:
+
+	ADirectorLaberinto* Director;
 
 	ALaberinto* Laberinto_1;
 	TArray<ALaberinto*>Laberinto;

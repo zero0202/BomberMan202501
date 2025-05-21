@@ -28,8 +28,14 @@ public:
 	UPROPERTY()
 	ALaberinto* Laberinto;
 
+	TArray<TArray<int32>> MapaBloques;
+	TArray<TArray<int32>> MapaPuertas;
+	TArray<TArray<int32>> MapaObstaculos;
+
+	void InicializarMapas();
 public:
 
+	virtual void Reset() override;
 	virtual void BuildBordes() override;
 	virtual void BuildInterior() override;
 	virtual void BuildPuertas() override;

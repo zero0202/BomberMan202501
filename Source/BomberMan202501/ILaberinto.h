@@ -23,9 +23,9 @@ class BOMBERMAN202501_API IILaberinto
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
-	virtual void SetBordes(int columnas, int filas) = 0;
-	virtual void SetInterior(int m) = 0;
-	virtual void SetPuertas(int p) = 0;
-	virtual void SetObstaculos(int o) = 0;
+	virtual void SetBordes() = 0;
+	virtual void SetInterior() = 0;
+	virtual void SetPuertas() = 0;
+	virtual void SetObstaculos() = 0;
 
 };

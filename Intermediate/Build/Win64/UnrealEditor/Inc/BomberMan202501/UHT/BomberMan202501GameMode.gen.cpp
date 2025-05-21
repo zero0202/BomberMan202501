@@ -12,7 +12,6 @@ void EmptyLinkFunctionForGeneratedCodeBomberMan202501GameMode() {}
 // Begin Cross Module References
 BOMBERMAN202501_API UClass* Z_Construct_UClass_ABomberMan202501GameMode();
 BOMBERMAN202501_API UClass* Z_Construct_UClass_ABomberMan202501GameMode_NoRegister();
-BOMBERMAN202501_API UClass* Z_Construct_UClass_UIFabricaBloques_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 UPackage* Z_Construct_UPackage__Script_BomberMan202501();
 // End Cross Module References
@@ -35,23 +34,13 @@ struct Z_Construct_UClass_ABomberMan202501GameMode_Statics
 		{ "ModuleRelativePath", "BomberMan202501GameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FabricaBloques_MetaData[] = {
-		{ "ModuleRelativePath", "BomberMan202501GameMode.h" },
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FInterfacePropertyParams NewProp_FabricaBloques;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABomberMan202501GameMode>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FInterfacePropertyParams Z_Construct_UClass_ABomberMan202501GameMode_Statics::NewProp_FabricaBloques = { "FabricaBloques", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Interface, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABomberMan202501GameMode, FabricaBloques), Z_Construct_UClass_UIFabricaBloques_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FabricaBloques_MetaData), NewProp_FabricaBloques_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABomberMan202501GameMode_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberMan202501GameMode_Statics::NewProp_FabricaBloques,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABomberMan202501GameMode_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ABomberMan202501GameMode_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AGameModeBase,
 	(UObject* (*)())Z_Construct_UPackage__Script_BomberMan202501,
@@ -63,11 +52,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ABomberMan202501GameMod
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	Z_Construct_UClass_ABomberMan202501GameMode_Statics::PropPointers,
+	nullptr,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	UE_ARRAY_COUNT(Z_Construct_UClass_ABomberMan202501GameMode_Statics::PropPointers),
+	0,
 	0,
 	0x008802ACu,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABomberMan202501GameMode_Statics::Class_MetaDataParams), Z_Construct_UClass_ABomberMan202501GameMode_Statics::Class_MetaDataParams)
@@ -92,10 +81,10 @@ ABomberMan202501GameMode::~ABomberMan202501GameMode() {}
 struct Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BomberMan202501GameMode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABomberMan202501GameMode, ABomberMan202501GameMode::StaticClass, TEXT("ABomberMan202501GameMode"), &Z_Registration_Info_UClass_ABomberMan202501GameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABomberMan202501GameMode), 1878644461U) },
+		{ Z_Construct_UClass_ABomberMan202501GameMode, ABomberMan202501GameMode::StaticClass, TEXT("ABomberMan202501GameMode"), &Z_Registration_Info_UClass_ABomberMan202501GameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABomberMan202501GameMode), 2288287083U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BomberMan202501GameMode_h_3523978351(TEXT("/Script/BomberMan202501"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BomberMan202501GameMode_h_3951694718(TEXT("/Script/BomberMan202501"),
 	Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BomberMan202501GameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan202501_Source_BomberMan202501_BomberMan202501GameMode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

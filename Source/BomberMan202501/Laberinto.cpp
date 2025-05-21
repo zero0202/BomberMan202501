@@ -23,77 +23,69 @@ void ALaberinto::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-void ALaberinto::SetBordes(int columnas, int filas)
+void ALaberinto::InicializarMapas(
+	const TArray<TArray<int32>>& NuevoMapaLaberinto,
+	const TArray<TArray<int32>>& NuevoMapaPuertas,
+	const TArray<TArray<int32>>& NuevoMapaObstaculos)
 {
-	const float Espaciado = 100.f;
-	int Rows = MapaLaberinto.Num();
-	int Cols = MapaLaberinto[0].Num();
-
-	for (int Y = 0; Y < Rows; ++Y)
+	MapaLaberinto = NuevoMapaLaberinto;
+	MapaPuertas = NuevoMapaPuertas;
+	MapaObstaculos = NuevoMapaObstaculos;
+}
+void ALaberinto::SetBordes()
+{
+	for (int x = 0; x < columnas; ++x)
 	{
-		for (int X = 0; X < Cols; ++X)
+		for (int y = 0; y < filas; ++y)
 		{
-			if (MapaLaberinto[Y][X] == 4)
+			if (x == 0 || x == columnas - 1 || y == 0 || y == filas - 1)
 			{
-				FVector Pos = FVector(X * Espaciado, Y * Espaciado, 0.f);
+				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
 				GetWorld()->SpawnActor<ABloqueAcero>(BloqueA, Pos, FRotator::ZeroRotator);
 			}
 		}
 	}
 }
 
-void ALaberinto::SetInterior(int m)
+void ALaberinto::SetInterior()
 {
-	const float Espaciado = 100.f;
-	int Rows = MapaLaberinto.Num();
-	int Cols = MapaLaberinto[0].Num();
-
-	for (int Y = 0; Y < Rows; ++Y)
+	for (int y = 0; y < MapaLaberinto.Num(); ++y)
 	{
-		for (int X = 0; X < Cols; ++X)
+		for (int x = 0; x < MapaLaberinto[y].Num(); ++x)
 		{
-			if (MapaLaberinto[Y][X] == 1)
+			if (MapaLaberinto[y][x] == 1)
 			{
-				FVector Pos = FVector(X * Espaciado, Y * Espaciado, 0.f);
+				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
 				GetWorld()->SpawnActor<ABloqueMadera>(BloqueM, Pos, FRotator::ZeroRotator);
 			}
 		}
 	}
 }
 
-void ALaberinto::SetPuertas(int p)
+void ALaberinto::SetPuertas()
 {
-	const float Espaciado = 100.f;
-	int Rows = MapaPuertas.Num();
-	int Cols = MapaPuertas[0].Num();
-
-	for (int Y = 0; Y < Rows; ++Y)
+	for (int y = 0; y < MapaPuertas.Num(); ++y)
 	{
-		for (int X = 0; X < Cols; ++X)
+		for (int x = 0; x < MapaPuertas[y].Num(); ++x)
 		{
-			if (MapaPuertas[Y][X] == 7)
+			if (MapaPuertas[y][x] == 7)
 			{
-				FVector Pos = FVector(X * Espaciado, Y * Espaciado, 100.f);
+				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
 				GetWorld()->SpawnActor<APuerta>(Puertas, Pos, FRotator::ZeroRotator);
 			}
 		}
 	}
 }
 
-void ALaberinto::SetObstaculos(int o)
+void ALaberinto::SetObstaculos()
 {
-	const float Espaciado = 100.f;
-	int Rows = MapaObstaculos.Num();
-	int Cols = MapaObstaculos[0].Num();
-
-	for (int Y = 0; Y < Rows; ++Y)
+	for (int y = 0; y < MapaObstaculos.Num(); ++y)
 	{
-		for (int X = 0; X < Cols; ++X)
+		for (int x = 0; x < MapaObstaculos[y].Num(); ++x)
 		{
-			if (MapaObstaculos[Y][X] == 8)
+			if (MapaObstaculos[y][x] == 8)
 			{
-				FVector Pos = FVector(X * Espaciado, Y * Espaciado, 50.f);
+				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
 				GetWorld()->SpawnActor<AObtaculos>(Obstaculos, Pos, FRotator::ZeroRotator);
 			}
 		}
