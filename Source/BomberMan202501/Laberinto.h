@@ -2,15 +2,10 @@
 
 #pragma once
 
+
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ILaberinto.h"
-#include "Bloque.h"
-#include "BloqueAcero.h"
-#include "BloqueMadera.h"
-#include "Puerta.h"
-#include "Obtaculos.h"
-#include "ILaberintoBuilder.h"
 #include "Laberinto.generated.h"
 
 UCLASS()
@@ -26,23 +21,20 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	
-/*
-	TArray<ABloque*> BLoque;
-	TArray<APuerta*> Puertas;
-	TArray<AObtaculos*> Obstaculos;
-*/
+	void SetBuilder(class IILaberintoBuilder* InBuilder);
+
 	IILaberintoBuilder* Builder;
 
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;	
+	virtual void Tick(float DeltaTime) override;
 
+	//void InicializarMapas(const TArray<TArray<int32>>& MapaBloques, const TArray<TArray<int32>>& MapaPuertas, const TArray<TArray<int32>>& MapaObstaculos);
 public:
 
-	virtual void SetBordes();
-	virtual void SetInterior();
-	virtual void SetPuertas();
-	virtual void SetObstaculos();
+	virtual void SetBordes() override;
+	virtual void SetInterior() override;
+	virtual void SetPuertas() override;
+	virtual void SetObstaculos() override;
 
 };

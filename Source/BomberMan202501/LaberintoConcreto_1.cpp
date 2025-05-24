@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "LaberintoConcreto_1.h"
+#include "Laberinto.h"
 #include "BloqueAcero.h"
 #include "BloqueLadrillo.h"
 #include "BloqueMadera.h"
@@ -12,21 +12,21 @@
 #include "BloqueHongo.h"
 #include "BloqueLava.h"
 #include "BloquePegajoso.h"
-#include "Laberinto.h"
+#include "Puerta.h"
+#include "Obtaculos.h"
 
 // Sets default values
 ALaberintoConcreto_1::ALaberintoConcreto_1()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	Laberinto = nullptr;
 }
 
 // Called when the game starts or when spawned
 void ALaberintoConcreto_1::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	// GenerarMapaPrueba();
 }
 
 // Called every frame
@@ -36,11 +36,9 @@ void ALaberintoConcreto_1::Tick(float DeltaTime)
 
 }
 
-void ALaberintoConcreto_1::InicializarMapas(const TArray<TArray<int32>>& NuevoMapaLaberinto, const TArray<TArray<int32>>& NuevoMapaPuertas, const TArray<TArray<int32>>& NuevoMapaObstaculos)
+void ALaberintoConcreto_1::GenerarMapaPrueba()
 {
-	MapaLaberinto = NuevoMapaLaberinto;
-	MapaPuertas = NuevoMapaPuertas;
-	MapaObstaculos = NuevoMapaObstaculos;
+
 }
 
 void ALaberintoConcreto_1::Reset()
@@ -52,7 +50,8 @@ void ALaberintoConcreto_1::Reset()
 	}
 
 	Laberinto = GetWorld()->SpawnActor<ALaberinto>(ALaberinto::StaticClass());
-	Laberinto->InicializarMapas(MapaBloques, MapaPuertas, MapaObstaculos);
+	//Laberinto->InicializarMapas(MapaBloques, MapaPuertas, MapaObstaculos);
+	//Laberinto->SetBuilder(this);
 }
 
 void ALaberintoConcreto_1::BuildBordes()
@@ -64,7 +63,8 @@ void ALaberintoConcreto_1::BuildBordes()
 			if (x == 0 || x == columnas - 1 || y == 0 || y == filas - 1)
 			{
 				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<ABloqueAcero>(BloqueA, Pos, FRotator::ZeroRotator);
+				GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), Pos, FRotator::ZeroRotator);
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Borde creado"));
 			}
 		}
 	}
@@ -79,7 +79,8 @@ void ALaberintoConcreto_1::BuildInterior()
 			if (MapaLaberinto[y][x] == 1)
 			{
 				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<ABloqueMadera>(BloqueM, Pos, FRotator::ZeroRotator);
+				GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), Pos, FRotator::ZeroRotator);
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Interior creado"));
 			}
 		}
 	}
@@ -94,7 +95,8 @@ void ALaberintoConcreto_1::BuildPuertas()
 			if (MapaPuertas[y][x] == 7)
 			{
 				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<APuerta>(Puertas, Pos, FRotator::ZeroRotator);
+				GetWorld()->SpawnActor<APuerta>(APuerta::StaticClass(), Pos, FRotator::ZeroRotator);
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("puertas creado"));
 			}
 		}
 	}
@@ -109,7 +111,8 @@ void ALaberintoConcreto_1::BuildObstaculos()
 			if (MapaObstaculos[y][x] == 8)
 			{
 				FVector Pos(x * Espaciado, y * Espaciado, 0.0f);
-				GetWorld()->SpawnActor<AObtaculos>(Obstaculos, Pos, FRotator::ZeroRotator);
+				GetWorld()->SpawnActor<AObtaculos>(AObtaculos::StaticClass(), Pos, FRotator::ZeroRotator);
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Orange, TEXT("Obstaculos creado"));
 			}
 		}
 	}

@@ -3,6 +3,7 @@
 
 #include "DirectorLaberinto.h"
 #include "LaberintoConcreto_1.h"
+#include "Laberinto.h"
 #include "Engine/Engine.h"
 
 // Sets default values
@@ -28,7 +29,6 @@ void ADirectorLaberinto::Tick(float DeltaTime)
 }
 
 
-
 void ADirectorLaberinto::SeleccionarLaberinto(IILaberintoBuilder* NewBuilder)
 {
 	LaberintoBuilder = NewBuilder;
@@ -36,10 +36,12 @@ void ADirectorLaberinto::SeleccionarLaberinto(IILaberintoBuilder* NewBuilder)
 
 void ADirectorLaberinto::ConstruirLaberinto()
 {
-	LaberintoBuilder->SetBordes();
-	LaberintoBuilder->SetInterior();
-	LaberintoBuilder->SetPuertas();
-	LaberintoBuilder->SetObstaculos();
+	if (!LaberintoBuilder) return;
+
+	LaberintoBuilder->BuildBordes();
+	LaberintoBuilder->BuildInterior();
+	LaberintoBuilder->BuildPuertas();
+	LaberintoBuilder->BuildObstaculos();
 
 }
 

@@ -34,16 +34,15 @@ void ABomberMan202501GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//statc  
-	Director = GetWorld()->SpawnActor<ADirectorLaberinto>();
-	ALaberintoConcreto_1* Builder = GetWorld()->SpawnActor<ALaberintoConcreto_1>();
+	Director = GetWorld()->SpawnActor<ADirectorLaberinto>(ADirectorLaberinto::StaticClass());
+	ALaberintoConcreto_1* Builder = GetWorld()->SpawnActor<ALaberintoConcreto_1>(ALaberintoConcreto_1::StaticClass());
 
 	if (Director && Builder)
 	{
+		Builder->Reset();
 		Director->SeleccionarLaberinto(Builder);
 		Director->ConstruirLaberinto();
-
-		Laberinto_1 = Director->ObtenerLaberinto();  
+		Laberinto_1 = Director->ObtenerLaberinto();
 	}
 
 }

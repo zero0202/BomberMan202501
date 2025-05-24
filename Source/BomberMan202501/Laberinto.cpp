@@ -2,6 +2,8 @@
 
 #include "Laberinto.h"
 #include "Engine/Engine.h"
+#include "ILaberintoBuilder.h"
+
 // Sets default values
 ALaberinto::ALaberinto()
 {
@@ -23,13 +25,22 @@ void ALaberinto::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+void ALaberinto::SetBuilder(IILaberintoBuilder* InBuilder)
+{
+	Builder = InBuilder;
+}
 
 void ALaberinto::SetBordes()
 {
+	if (Builder) 
+	{
 
-
-	Builder->BuildBordes();
-
+		Builder->BuildBordes();
+	}
+	else if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir bordes."));
+	}
 }
 
 void ALaberinto::SetInterior()
@@ -40,7 +51,7 @@ void ALaberinto::SetInterior()
 	}
 	else if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir torretas."));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir interiores."));
 	}
 }
 
@@ -52,7 +63,7 @@ void ALaberinto::SetPuertas()
 	}
 	else if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir torretas."));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir puertas."));
 	}
 }
 
@@ -64,7 +75,7 @@ void ALaberinto::SetObstaculos()
 	}
 	else if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir minas."));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Builder no asignado: no se pueden construir obstaculos."));
 	}
 }
 
